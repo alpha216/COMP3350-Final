@@ -38,6 +38,9 @@ led:
     RET                       ; return to loop() function
 
 ledOFF:
+    SBI   PORTB, 4            ; set D12 to high
+    SBI   PORTB, 5            ; set D13 to high
+    RCALL myDelay
     CBI   PORTB, 4            ; set D12 to low
     CBI   PORTB, 5            ; set D13 to low
     RCALL myDelay
